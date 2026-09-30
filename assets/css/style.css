@@ -1,39 +1,31 @@
 /* ==========================================================================
-   ADVANCED ASSESSMENT & SOLUTIONS LTD - BRAND GREY (#737373) THEME
+   ADVANCED ASSESSMENT & SOLUTIONS LTD - REFINED PALETTE
    File Path: assets/css/style.css
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
 
 :root {
-    /* Core Brand Logo Color */
-    --color-logo-grey: #737373;      /* Primary Logo Background Grey */
-    --color-grey-dark: #5a5a5a;      /* Deeper shade for borders/depth */
-    --color-grey-light: #8c8c8c;     /* Lighter shade for subtle highlights */
-    
-    /* Complementary Dark & Navy Canvas */
-    --color-bg-dark: #1b1e22;        /* Deep charcoal canvas */
-    --color-surface: #262a30;        /* Card surface */
-    --color-navy: #002040;           /* Featured Navy Blue block */
-    --color-navy-dark: #001226;      /* Footer background */
-    
-    /* Accents (Used Sparingly) */
-    --color-accent: #fc9700;         /* Vibrant Orange accent */
-    --color-accent-hover: #e08600;
-    
-    /* Typography */
-    --color-white: #ffffff;
-    --color-text-light: #f1f5f9;     /* Body text on dark backgrounds */
-    --color-text-muted: #d0d7de;
-    --color-border: rgba(255, 255, 255, 0.12);
-    --color-border-glow: rgba(252, 151, 0, 0.35);
+    /* Exact Requested Palette */
+    --color-bg-base: #bababa;        /* Primary light grey canvas */
+    --color-logo-grey: #737373;      /* Mid-tone logo grey */
+    --color-white: #ffffff;          /* Pure white for cards & highlights */
+    --color-offwhite: #f4f6f8;       /* Very light grey */
+    --color-light-navy: #485c82;     /* Lighter navy for hover states & accents */
+    --color-navy: #002040;           /* Deep navy for main stats block & footer */
+    --color-accent: #fc9700;         /* Orange accent (used sparingly) */
 
-    /* Typography Families */
+    /* Text & Readability Mapping */
+    --color-text-dark: #1e242b;      /* Text on white / light grey */
+    --color-text-light: #ffffff;     /* Text on navy / logo grey */
+    --color-text-muted: #555555;     /* Subtitle text */
+
+    /* Fonts */
     --font-serif: 'Cardo', 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Reset & Base Rules */
+/* Reset & Base Setup */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -46,8 +38,8 @@ html {
 
 body {
     font-family: var(--font-sans);
-    color: var(--color-text-light);
-    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-base); /* #bababa page base */
     line-height: 1.65;
     display: flex;
     flex-direction: column;
@@ -57,15 +49,13 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
-    color: var(--color-white);
     font-weight: 700;
     line-height: 1.25;
 }
 
 p {
-    color: var(--color-text-light);
     margin-bottom: 1rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 a {
@@ -82,16 +72,15 @@ a {
 }
 
 /* ==========================================================================
-   NAVIGATION & HEADER
+   NAVIGATION & HEADER (#737373 Background)
    ========================================================================== */
 .header {
-    background: rgba(115, 115, 115, 0.95); /* Logo Grey Glass Header */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: var(--color-logo-grey); /* #737373 */
+    border-bottom: 3px solid var(--color-light-navy); /* #485c82 */
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
 }
 
 .nav-container {
@@ -113,7 +102,7 @@ a {
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 2.5px;
-    color: #e2e8f0;
+    color: var(--color-offwhite);
     margin-top: 2px;
     display: block;
     font-weight: 600;
@@ -128,7 +117,7 @@ a {
 
 .nav-links a {
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--color-white);
     position: relative;
     padding: 8px 0;
@@ -140,8 +129,8 @@ a {
     bottom: 0;
     left: 0;
     width: 0;
-    height: 2px;
-    background-color: var(--color-accent);
+    height: 3px;
+    background-color: var(--color-accent); /* Sparingly used orange */
     transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -151,37 +140,10 @@ a {
 }
 
 /* ==========================================================================
-   INTERACTIVE FIGMA-STYLE GLASS BUTTONS
+   FIGMA-STYLE HOVER BUTTONS
    ========================================================================== */
 .btn-accent {
-    background: var(--color-accent) !important;
-    color: var(--color-white) !important;
-    padding: 14px 42px; /* Extended width */
-    min-width: 180px;
-    text-align: center;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    display: inline-block;
-    border: 1px solid rgba(252, 151, 0, 0.6);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(252, 151, 0, 0.25);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-accent:hover {
-    background: rgba(252, 151, 0, 0.2) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-color: var(--color-accent);
-    color: var(--color-white) !important;
-    box-shadow: 0 8px 30px rgba(252, 151, 0, 0.4), 0 0 15px rgba(252, 151, 0, 0.2);
-    transform: translateY(-3px) scale(1.02);
-}
-
-.btn-navy {
-    background: var(--color-navy) !important;
+    background: var(--color-accent) !important; /* Orange */
     color: var(--color-white) !important;
     padding: 14px 42px;
     min-width: 180px;
@@ -190,43 +152,94 @@ a {
     font-weight: 600;
     font-size: 0.9rem;
     display: inline-block;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(252, 151, 0, 0.6);
+    box-shadow: 0 4px 15px rgba(252, 151, 0, 0.25);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-accent:hover {
+    background: rgba(252, 151, 0, 0.25) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-color: var(--color-accent);
+    color: var(--color-navy) !important;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(252, 151, 0, 0.35);
+    transform: translateY(-3px);
+}
+
+.btn-navy {
+    background: var(--color-navy) !important; /* #002040 */
+    color: var(--color-white) !important;
+    padding: 14px 42px;
+    min-width: 180px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    border: 1px solid var(--color-light-navy);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-navy:hover {
-    background: rgba(0, 32, 64, 0.5) !important;
-    backdrop-filter: blur(10px);
-    border-color: rgba(255, 255, 255, 0.35);
+    background: var(--color-light-navy) !important; /* #485c82 */
+    backdrop-filter: blur(8px);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 32, 64, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 32, 64, 0.25);
 }
 
 /* ==========================================================================
-   LOGO GREY (#737373) HERO & FEATURED SECTIONS
+   HERO & SECTION VARIATIONS
    ========================================================================== */
-.hero-grey {
-    background-color: var(--color-logo-grey); /* Primary Logo Background */
+/* Hero Banner on Logo Grey (#737373) */
+.hero-section {
+    background-color: var(--color-logo-grey); /* #737373 */
     color: var(--color-white);
     padding: 90px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.hero-grey h1 {
+.hero-section h1 {
     color: var(--color-white);
 }
 
-.hero-grey p {
-    color: #f1f5f9;
+.hero-section p {
+    color: var(--color-offwhite);
 }
 
+/* Base Light Grey Section (#bababa) */
+.section-light-grey {
+    background-color: var(--color-bg-base); /* #bababa */
+    padding: 90px 0;
+}
+
+/* Crisp White Section */
+.section-white {
+    background-color: var(--color-white);
+    padding: 90px 0;
+}
+
+/* Medium Logo Grey Section (#737373) */
+.section-logo-grey {
+    background-color: var(--color-logo-grey); /* #737373 */
+    color: var(--color-white);
+    padding: 90px 0;
+}
+
+.section-logo-grey h2,
+.section-logo-grey h3,
+.section-logo-grey p {
+    color: var(--color-white);
+}
+
+/* Page Headers */
 .page-header {
-    background-color: var(--color-logo-grey);
+    background-color: var(--color-logo-grey); /* #737373 */
     color: var(--color-white);
     padding: 70px 0;
     text-align: center;
-    border-bottom: 4px solid var(--color-accent);
+    border-bottom: 4px solid var(--color-light-navy); /* #485c82 */
 }
 
 .page-header h1 {
@@ -237,19 +250,44 @@ a {
 
 .page-header p {
     font-size: 1.15rem;
-    color: #f1f5f9;
+    color: var(--color-offwhite);
     max-width: 750px;
     margin: 0 auto;
 }
 
+/* Section Titles */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title .tag {
+    color: var(--color-accent); /* Orange tag */
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--color-navy); /* #002040 */
+}
+
+.section-logo-grey .section-title h2 {
+    color: var(--color-white);
+}
+
 /* ==========================================================================
-   NAVY BLUE STATS BAR (#002040)
+   FEATURED NAVY STATS BAR (#002040)
    ========================================================================== */
 .stats-bar {
-    background-color: var(--color-navy); /* Solid Navy Background */
+    background-color: var(--color-navy); /* #002040 Solid Navy */
     padding: 60px 0;
-    border-top: 1px solid rgba(252, 151, 0, 0.25);
-    border-bottom: 1px solid rgba(252, 151, 0, 0.25);
+    border-top: 3px solid var(--color-light-navy); /* #485c82 */
+    border-bottom: 3px solid var(--color-light-navy);
 }
 
 .stats-grid {
@@ -277,79 +315,59 @@ a {
 }
 
 /* ==========================================================================
-   SECTIONS & BRAND GREY ALTERNATING BLOCKS
+   CARDS & CONTAINERS
    ========================================================================== */
-.section {
-    padding: 90px 0;
-}
-
-.section-grey {
-    background-color: var(--color-logo-grey); /* Logo Grey Background Section */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.section-dark {
-    background-color: var(--color-bg-dark);
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-title .tag {
-    color: var(--color-accent); /* Orange sparingly used */
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.section-title h2 {
-    font-size: 2.5rem;
-}
-
-/* Cards on Logo Grey Backgrounds */
-.card-navy {
-    background: var(--color-navy);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 36px;
-    border-radius: 8px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.card-navy:hover {
-    transform: translateY(-6px);
-    border-color: var(--color-accent);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
-}
-
+/* White Cards on #bababa base */
 .card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    padding: 36px;
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 8px;
+    padding: 36px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover {
     transform: translateY(-6px);
-    border-color: var(--color-border-glow);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    border-color: var(--color-light-navy);
+}
+
+.card h3, .card h4 {
+    color: var(--color-navy);
+    margin-bottom: 12px;
+}
+
+/* Lighter Navy Cards (#485c82) on #737373 sections */
+.card-navy-light {
+    background: var(--color-light-navy); /* #485c82 */
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 36px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-navy-light:hover {
+    transform: translateY(-6px);
+    background: var(--color-navy); /* Transitory depth to #002040 */
+    box-shadow: 0 12px 30px rgba(0, 32, 64, 0.3);
+}
+
+.card-navy-light h3, .card-navy-light h4 {
+    color: var(--color-white);
 }
 
 /* Ethos Container */
 .ethos-box {
-    background: linear-gradient(135deg, var(--color-navy) 0%, #001226 100%);
-    border: 1px solid rgba(252, 151, 0, 0.35);
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-light-navy) 100%);
+    border: 2px solid var(--color-accent);
     padding: 60px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    color: var(--color-white);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .ethos-box h3 {
@@ -367,14 +385,14 @@ a {
 }
 
 /* ==========================================================================
-   FOOTER (ORANGE CATEGORY HEADERS & WHITE BODY TEXT)
+   FOOTER (#002040 NAVY WITH ORANGE HEADINGS)
    ========================================================================== */
 .footer {
-    background-color: var(--color-navy-dark);
-    color: var(--color-text-muted);
+    background-color: var(--color-navy); /* #002040 Deep Navy */
+    color: var(--color-offwhite);
     padding: 70px 0 35px;
     margin-top: auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 4px solid var(--color-light-navy); /* #485c82 */
 }
 
 .footer-grid {
@@ -386,14 +404,14 @@ a {
 
 .footer-brand h4,
 .footer-links h5 {
-    color: var(--color-accent) !important; /* Orange Footer Category Headings */
+    color: var(--color-accent) !important; /* Orange category titles */
     font-size: 1.15rem;
     margin-bottom: 18px;
     letter-spacing: 0.5px;
 }
 
 .footer-brand p {
-    color: var(--color-text-light); /* White / Light Grey Text */
+    color: var(--color-offwhite);
     font-size: 0.9rem;
     line-height: 1.7;
 }
@@ -407,7 +425,7 @@ a {
 }
 
 .footer-links a {
-    color: var(--color-text-light);
+    color: var(--color-offwhite);
     font-size: 0.9rem;
 }
 
@@ -417,11 +435,11 @@ a {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 28px;
     text-align: center;
     font-size: 0.85rem;
-    color: var(--color-text-muted);
+    color: var(--color-offwhite);
 }
 
 /* Mobile Responsiveness */

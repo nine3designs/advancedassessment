@@ -1,34 +1,39 @@
 /* ==========================================================================
-   ADVANCED ASSESSMENT & SOLUTIONS LTD - PREMIUM DARK THEME
+   ADVANCED ASSESSMENT & SOLUTIONS LTD - BRAND GREY (#737373) THEME
    File Path: assets/css/style.css
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
 
 :root {
-    /* Main Dark Grey Canvas Palette */
-    --color-bg-dark: #1e2227;        /* Primary dark grey page background */
-    --color-surface: #272c33;        /* Slightly lighter dark grey for cards */
-    --color-surface-hover: #2e343d;  /* Card hover state */
+    /* Core Brand Logo Color */
+    --color-logo-grey: #737373;      /* Primary Logo Background Grey */
+    --color-grey-dark: #5a5a5a;      /* Deeper shade for borders/depth */
+    --color-grey-light: #8c8c8c;     /* Lighter shade for subtle highlights */
     
-    /* Brand Accent Colors */
-    --color-navy: #002040;           /* Featured Navy Blue block background */
-    --color-navy-dark: #001328;      /* Deep navy for footer */
-    --color-accent: #fc9700;         /* Used SPARINGLY for key accents */
+    /* Complementary Dark & Navy Canvas */
+    --color-bg-dark: #1b1e22;        /* Deep charcoal canvas */
+    --color-surface: #262a30;        /* Card surface */
+    --color-navy: #002040;           /* Featured Navy Blue block */
+    --color-navy-dark: #001226;      /* Footer background */
     
-    /* Typography Colors */
+    /* Accents (Used Sparingly) */
+    --color-accent: #fc9700;         /* Vibrant Orange accent */
+    --color-accent-hover: #e08600;
+    
+    /* Typography */
     --color-white: #ffffff;
-    --color-text-light: #e2e8f0;     /* Primary body text */
-    --color-text-muted: #94a3b8;     /* Subtitle/secondary text */
-    --color-border: rgba(255, 255, 255, 0.08);
-    --color-border-glow: rgba(252, 151, 0, 0.3);
+    --color-text-light: #f1f5f9;     /* Body text on dark backgrounds */
+    --color-text-muted: #d0d7de;
+    --color-border: rgba(255, 255, 255, 0.12);
+    --color-border-glow: rgba(252, 151, 0, 0.35);
 
-    /* Fonts */
+    /* Typography Families */
     --font-serif: 'Cardo', 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Reset & Smooth Scroll */
+/* Reset & Base Rules */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -77,17 +82,16 @@ a {
 }
 
 /* ==========================================================================
-   NAVIGATION & GLASS HEADER
+   NAVIGATION & HEADER
    ========================================================================== */
 .header {
-    background: rgba(30, 34, 39, 0.85);
+    background: rgba(115, 115, 115, 0.95); /* Logo Grey Glass Header */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     position: sticky;
     top: 0;
     z-index: 1000;
-    transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -106,12 +110,13 @@ a {
 }
 
 .brand-logo .subtitle {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 2.5px;
-    color: var(--color-text-muted);
+    color: #e2e8f0;
     margin-top: 2px;
     display: block;
+    font-weight: 600;
 }
 
 .nav-links {
@@ -122,14 +127,13 @@ a {
 }
 
 .nav-links a {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.9rem;
-    color: var(--color-text-light);
+    color: var(--color-white);
     position: relative;
     padding: 8px 0;
 }
 
-/* Link Underline Micro-interaction */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -146,18 +150,14 @@ a {
     width: 100%;
 }
 
-.nav-links a.active {
-    color: var(--color-white);
-}
-
 /* ==========================================================================
-   PREMIUM GLASS BUTTONS (LONGER & FIGMA INTERACTIVE)
+   INTERACTIVE FIGMA-STYLE GLASS BUTTONS
    ========================================================================== */
 .btn-accent {
     background: var(--color-accent) !important;
     color: var(--color-white) !important;
-    padding: 14px 38px; /* Longer, wider layout */
-    min-width: 170px;
+    padding: 14px 42px; /* Extended width */
+    min-width: 180px;
     text-align: center;
     border-radius: 6px;
     font-weight: 600;
@@ -166,52 +166,90 @@ a {
     border: 1px solid rgba(252, 151, 0, 0.6);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(252, 151, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(252, 151, 0, 0.25);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Glassmorphism Hover Effect */
 .btn-accent:hover {
-    background: rgba(252, 151, 0, 0.15) !important;
+    background: rgba(252, 151, 0, 0.2) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-color: var(--color-accent);
     color: var(--color-white) !important;
-    box-shadow: 0 8px 30px rgba(252, 151, 0, 0.35), 0 0 15px rgba(252, 151, 0, 0.2);
+    box-shadow: 0 8px 30px rgba(252, 151, 0, 0.4), 0 0 15px rgba(252, 151, 0, 0.2);
     transform: translateY(-3px) scale(1.02);
 }
 
 .btn-navy {
     background: var(--color-navy) !important;
     color: var(--color-white) !important;
-    padding: 14px 38px;
-    min-width: 170px;
+    padding: 14px 42px;
+    min-width: 180px;
     text-align: center;
     border-radius: 6px;
     font-weight: 600;
     font-size: 0.9rem;
     display: inline-block;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-navy:hover {
-    background: rgba(0, 32, 64, 0.4) !important;
+    background: rgba(0, 32, 64, 0.5) !important;
     backdrop-filter: blur(10px);
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.35);
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 32, 64, 0.4);
 }
 
 /* ==========================================================================
-   FEATURED NAVY BLUE STATS BAR (SPECIFICALLY REQUESTED)
+   LOGO GREY (#737373) HERO & FEATURED SECTIONS
+   ========================================================================== */
+.hero-grey {
+    background-color: var(--color-logo-grey); /* Primary Logo Background */
+    color: var(--color-white);
+    padding: 90px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+}
+
+.hero-grey h1 {
+    color: var(--color-white);
+}
+
+.hero-grey p {
+    color: #f1f5f9;
+}
+
+.page-header {
+    background-color: var(--color-logo-grey);
+    color: var(--color-white);
+    padding: 70px 0;
+    text-align: center;
+    border-bottom: 4px solid var(--color-accent);
+}
+
+.page-header h1 {
+    color: var(--color-white);
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+}
+
+.page-header p {
+    font-size: 1.15rem;
+    color: #f1f5f9;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   NAVY BLUE STATS BAR (#002040)
    ========================================================================== */
 .stats-bar {
-    background-color: var(--color-navy); /* Solid Navy Blue Background */
+    background-color: var(--color-navy); /* Solid Navy Background */
     padding: 60px 0;
-    border-top: 1px solid rgba(252, 151, 0, 0.2);
-    border-bottom: 1px solid rgba(252, 151, 0, 0.2);
-    position: relative;
+    border-top: 1px solid rgba(252, 151, 0, 0.25);
+    border-bottom: 1px solid rgba(252, 151, 0, 0.25);
 }
 
 .stats-grid {
@@ -227,7 +265,6 @@ a {
     font-family: var(--font-serif);
     font-weight: 700;
     margin-bottom: 6px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .stat-item p {
@@ -240,14 +277,20 @@ a {
 }
 
 /* ==========================================================================
-   SECTIONS & CARDS (DARK GREY CANVAS)
+   SECTIONS & BRAND GREY ALTERNATING BLOCKS
    ========================================================================== */
 .section {
     padding: 90px 0;
 }
 
-.section-bg-alt {
-    background-color: #171a1e;
+.section-grey {
+    background-color: var(--color-logo-grey); /* Logo Grey Background Section */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-dark {
+    background-color: var(--color-bg-dark);
 }
 
 .section-title {
@@ -256,7 +299,7 @@ a {
 }
 
 .section-title .tag {
-    color: var(--color-accent); /* Sparingly used orange tag */
+    color: var(--color-accent); /* Orange sparingly used */
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -269,36 +312,44 @@ a {
     font-size: 2.5rem;
 }
 
-/* Figma-Style Floating Cards */
+/* Cards on Logo Grey Backgrounds */
+.card-navy {
+    background: var(--color-navy);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 36px;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-navy:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-accent);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
+}
+
 .card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     padding: 36px;
     border-radius: 8px;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    background: var(--color-surface-hover);
     border-color: var(--color-border-glow);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(252, 151, 0, 0.08);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
-.card h3, .card h4 {
-    color: var(--color-white);
-    margin-bottom: 12px;
-}
-
-/* Ethos Box */
+/* Ethos Container */
 .ethos-box {
     background: linear-gradient(135deg, var(--color-navy) 0%, #001226 100%);
-    border: 1px solid rgba(252, 151, 0, 0.3);
+    border: 1px solid rgba(252, 151, 0, 0.35);
     padding: 60px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .ethos-box h3 {
@@ -316,14 +367,14 @@ a {
 }
 
 /* ==========================================================================
-   FOOTER (ORANGE CATEGORIES & WHITE/GREY BODY TEXT)
+   FOOTER (ORANGE CATEGORY HEADERS & WHITE BODY TEXT)
    ========================================================================== */
 .footer {
     background-color: var(--color-navy-dark);
     color: var(--color-text-muted);
     padding: 70px 0 35px;
     margin-top: auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-grid {
@@ -333,17 +384,16 @@ a {
     margin-bottom: 50px;
 }
 
-/* Footer Section Titles in Orange */
 .footer-brand h4,
 .footer-links h5 {
-    color: var(--color-accent) !important; /* Requested Orange Footer Headings */
+    color: var(--color-accent) !important; /* Orange Footer Category Headings */
     font-size: 1.15rem;
     margin-bottom: 18px;
     letter-spacing: 0.5px;
 }
 
 .footer-brand p {
-    color: var(--color-text-light); /* White/Light Grey Text */
+    color: var(--color-text-light); /* White / Light Grey Text */
     font-size: 0.9rem;
     line-height: 1.7;
 }
@@ -356,7 +406,6 @@ a {
     margin-bottom: 10px;
 }
 
-/* Footer Links in White/Light Grey with subtle Orange hover */
 .footer-links a {
     color: var(--color-text-light);
     font-size: 0.9rem;
@@ -375,7 +424,7 @@ a {
     color: var(--color-text-muted);
 }
 
-/* Responsive Breakpoints */
+/* Mobile Responsiveness */
 @media (max-width: 900px) {
     .stats-grid, .footer-grid {
         grid-template-columns: 1fr;

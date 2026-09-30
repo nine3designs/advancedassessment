@@ -478,21 +478,29 @@ select.form-control{
   .cred-row .num{font-size:1.8rem}
   .cred-row:hover{padding-left:60px}
 }
-/* ================= NAV BAR — GREY #737373 ================= */
-.header,
-.header.scrolled{background:#737373;border-bottom-color:rgba(255,255,255,.12)}
 
-.brand-logo .title{color:#fff}
-.brand-logo .subtitle{color:rgba(255,255,255,.75)}
-.brand-logo img{
-  display:block;height:46px;width:auto;
-  transition:height .4s var(--ease);
-}
-.header.scrolled .brand-logo img{height:36px}  /* follows the nav condense-on-scroll */
-.nav-links a:not(.btn){color:#fff}
-.nav-toggle span{background:#fff}
 
-/* mobile drawer to match */
+/* ==========================================================
+   NAV — GREY BAR (#737373) + LOGO IMAGE
+   ========================================================== */
+.header,.header.scrolled{background:#737373;border-bottom-color:rgba(255,255,255,.12)}
+.header .brand-logo img{display:block;height:44px;width:auto;transition:height .4s var(--ease)}
+.header.scrolled .brand-logo img{height:34px}
+.header .nav-links a:not(.btn){color:#fff}
+.header .nav-toggle span{background:#fff}
 @media(max-width:900px){
-  .nav-links{background:#737373}
+  .header .nav-links{background:#737373}
+  .header .brand-logo img{height:36px}
+}
+
+/* mobile logo sizing refinement */
+@media(max-width:900px){.header .brand-logo img{height:30px}}
+
+/* ==========================================================
+   NAV — PREMIUM GREY GRADIENT
+   ========================================================== */
+.header{background:linear-gradient(135deg,#848484 0%,#737373 46%,#5e5e5e 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
+.header.scrolled{background:linear-gradient(135deg,#7a7a7a 0%,#6a6a6a 50%,#565656 100%);border-bottom-color:rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 8px 30px rgba(13,28,52,.18)}
+@media(max-width:900px){
+  .header .nav-links{background:linear-gradient(160deg,#7f7f7f 0%,#5e5e5e 100%)}
 }

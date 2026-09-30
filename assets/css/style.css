@@ -478,3 +478,21 @@ select.form-control{
   .cred-row .num{font-size:1.8rem}
   .cred-row:hover{padding-left:60px}
 }
+/* ================= NAV BAR — GREY #737373 ================= */
+.header,
+.header.scrolled{background:#737373;border-bottom-color:rgba(255,255,255,.12)}
+
+.brand-logo .title{color:#fff}
+.brand-logo .subtitle{color:rgba(255,255,255,.75)}
+.brand-logo img{
+  display:block;height:46px;width:auto;
+  transition:height .4s var(--ease);
+}
+.header.scrolled .brand-logo img{height:36px}  /* follows the nav condense-on-scroll */
+.nav-links a:not(.btn){color:#fff}
+.nav-toggle span{background:#fff}
+
+/* mobile drawer to match */
+@media(max-width:900px){
+  .nav-links{background:#737373}
+}

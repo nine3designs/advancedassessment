@@ -156,7 +156,7 @@ img,svg{display:block}
   opacity:0;animation:rise 1s var(--ease) .3s forwards;
 }
 .cred-panel::before{ /* amber corner accent */
-  content:'';position:absolute;top:0;left:05 width:125px;height:3px;
+  content:'';position:absolute;top:0;left:0;width:120px;height:3px;
   background:linear-gradient(270deg,transparent,var(--amber));
   border-radius:22px 0 8px 0;
 }
@@ -200,7 +200,7 @@ img,svg{display:block}
 .pill .icon svg{width:15px;height:15px}
 
 .medallion{
-  position:absolute;top:-28px;right:2%;z-index:4;width:168px;height:168px;
+  position:absolute;top:-28px;right:2%;z-index:4;width:168px;height:168px;--star-r:57px;--star:13px;
   opacity:0;animation:rise 1s var(--ease) .7s forwards;
 }
 .medallion .inner{
@@ -211,8 +211,13 @@ img,svg{display:block}
   animation:float 7s ease-in-out infinite;
 }
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.medallion .stars{display:flex;gap:3px;margin-bottom:5px}
-.medallion .stars svg{width:17px;height:17px;fill:var(--amber)}
+.medallion .stars{position:absolute;inset:0;pointer-events:none}
+.medallion .stars svg{position:absolute;top:50%;left:50%;width:var(--star);height:var(--star);fill:var(--amber)}
+.medallion .stars svg:nth-child(1){transform:translate(-50%,-50%) rotate(-52deg) translateY(calc(-1*var(--star-r)))}
+.medallion .stars svg:nth-child(2){transform:translate(-50%,-50%) rotate(-26deg) translateY(calc(-1*var(--star-r)))}
+.medallion .stars svg:nth-child(3){transform:translate(-50%,-50%) translateY(calc(-1*var(--star-r)))}
+.medallion .stars svg:nth-child(4){transform:translate(-50%,-50%) rotate(26deg) translateY(calc(-1*var(--star-r)))}
+.medallion .stars svg:nth-child(5){transform:translate(-50%,-50%) rotate(52deg) translateY(calc(-1*var(--star-r)))}
 .medallion .org{font-family:var(--sans);font-size:.62rem;font-weight:600;letter-spacing:.28em;color:var(--slate)}
 .medallion .win{font-family:var(--serif);font-size:1.06rem;font-weight:700;color:var(--navy-900);letter-spacing:.04em}
 .medallion .yr{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--navy-900);line-height:1}
@@ -365,7 +370,7 @@ img,svg{display:block}
   .cred-mark{font-size:5.2rem;right:10px;bottom:2px}
   .cred-role{max-width:70%;line-height:1.8}
   .medallion .yr{font-size:1.25rem}
-  .medallion{width:118px;height:118px;top:-24px;right:8px}
+  .medallion{width:118px;height:118px;top:-24px;right:8px;--star-r:40px;--star:10px}
   .contact-card{position:relative;left:auto;bottom:auto;margin:-46px 14px 0;width:auto;min-width:0;padding:18px 18px}
   .pill{font-size:.8rem;min-width:0}
   .pill,.pill *{overflow-wrap:anywhere}

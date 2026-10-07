@@ -156,7 +156,7 @@ img,svg{display:block}
   opacity:0;animation:rise 1s var(--ease) .3s forwards;
 }
 .cred-panel::before{ /* amber corner accent */
-  content:'';position:absolute;top:0;left:0;width:120px;height:3px;
+  content:'';position:absolute;top:0;left:1px;width:120px;height:3px;
   background:linear-gradient(270deg,transparent,var(--amber));
   border-radius:22px 0 8px 0;
 }

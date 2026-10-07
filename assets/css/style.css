@@ -509,3 +509,38 @@ select.form-control{
 @media(max-width:900px){
   .header .nav-links{background:linear-gradient(160deg,#7f7f7f 0%,#5e5e5e 100%)}
 }
+/* ==========================================================
+   MOBILE NAV — USABILITY PASS
+   Visible close button inside the drawer, dimmed backdrop
+   (tap outside to close), Escape-to-close, background scroll
+   lock, bigger tap targets. Close button + backdrop are
+   injected by main.js — no HTML changes needed.
+   ========================================================== */
+.nav-close-item{display:none}
+@media(max-width:880px){
+  .nav-links{
+    height:100vh;height:100dvh;
+    visibility:hidden;
+    transition:transform .5s var(--ease),visibility 0s .5s;
+  }
+  .nav-links.open{visibility:visible;transition:transform .5s var(--ease)}
+  .nav-links li{width:100%;text-align:center}
+  .nav-links a:not(.btn){display:inline-block;padding:10px 24px;font-size:1rem}
+  .nav-links a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+  .nav-close-item{display:block;position:absolute;top:22px;right:20px}
+  .nav-close{
+    display:flex;width:46px;height:46px;align-items:center;justify-content:center;
+    border:none;border-radius:50%;cursor:pointer;padding:0;
+    background:rgba(255,255,255,.14);
+    transition:background .3s var(--ease),transform .3s var(--ease);
+  }
+  .nav-close svg{width:20px;height:20px;display:block;stroke:#fff;stroke-width:2.4;stroke-linecap:round}
+  .nav-close:hover,.nav-close:focus-visible{background:var(--amber);transform:rotate(90deg)}
+  .nav-close:focus-visible{outline:2px solid rgba(255,255,255,.85);outline-offset:2px}
+  .nav-backdrop{
+    position:fixed;inset:0;z-index:999;background:rgba(13,28,52,.45);
+    opacity:0;pointer-events:none;transition:opacity .4s var(--ease);
+  }
+  body.nav-open .nav-backdrop{opacity:1;pointer-events:auto}
+}
+body.nav-open{overflow:hidden}

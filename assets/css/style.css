@@ -507,7 +507,7 @@ select.form-control{
 .header .nav-toggle span{background:#fff}
 @media(max-width:900px){
   .header .nav-links{background:#737373}
-  .header .brand-logo img{width:260px;max-width:58vw}
+  .header .brand-logo img{width:200px;max-width:48vw}
 }
 
 

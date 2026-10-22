@@ -574,3 +574,20 @@ body.nav-open{overflow:hidden}
       .quote-rail::-webkit-scrollbar{display:none}
     }
     .nav-links li.nav-close-item{width:auto;right:20px;left:auto;top:22px}
+
+/* --- feedback polish (round 9) --- */
+.n3-feedback-polish{display:none}
+.quote-rail{align-items:start}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+@media(max-width:900px){
+  .duo{grid-template-columns:1fr;gap:18px}
+}
+@media(max-width:640px){
+  .quote-card{padding:26px 20px 22px}
+  .quote-card p{font-size:1.02rem;margin:28px 0 14px;line-height:1.65}
+  .quote-rail{display:block;overflow:visible;margin:0;padding:0}
+  .quote-rail .quote-card{flex:none;margin-bottom:16px;scroll-snap-align:auto}
+  .quote-rail::-webkit-scrollbar{display:none}
+  .form-row{grid-template-columns:1fr!important;gap:0!important}
+  .form-card{padding:30px 22px}
+}

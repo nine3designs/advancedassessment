@@ -218,10 +218,11 @@ img,svg{display:block}
 .medallion .stars svg:nth-child(3){transform:translate(-50%,-50%) translateY(calc(-1*var(--star-r)))}
 .medallion .stars svg:nth-child(4){transform:translate(-50%,-50%) rotate(26deg) translateY(calc(-1*var(--star-r)))}
 .medallion .stars svg:nth-child(5){transform:translate(-50%,-50%) rotate(52deg) translateY(calc(-1*var(--star-r)))}
-.medallion .org{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.26em;color:var(--slate)}
-.medallion .role{font-family:var(--sans);font-size:.5rem;font-weight:700;letter-spacing:.14em;color:var(--slate);text-transform:uppercase;line-height:1.55;margin-top:2px}
-.medallion .win{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--navy-900);letter-spacing:.06em;margin-top:4px}
-.medallion .yr{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--navy-900);line-height:1.05;margin-top:3px}
+.medallion .org{font-family:var(--sans);font-size:.6rem;font-weight:700;letter-spacing:.36em;color:var(--slate)}
+.medallion .role{display:block;font-family:var(--serif);font-size:.96rem;font-weight:600;color:var(--navy-900);line-height:1.42;margin-top:6px;letter-spacing:.01em}
+.medallion .win{display:block;font-family:var(--sans);font-size:.56rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--amber-deep);margin-top:9px}
+.medallion .win::before{content:'';display:block;width:30px;height:2px;background:var(--amber);margin:0 auto 8px}
+.medallion .yr{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--navy-900);line-height:1;margin-top:6px}
 .medallion .yr .amp{color:var(--amber);font-style:italic;font-size:1.1rem}
 
 /* ==========================================================
@@ -555,3 +556,27 @@ select.form-control{
   body.nav-open .nav-backdrop{opacity:1;pointer-events:auto}
 }
 body.nav-open{overflow:hidden}
+
+    /* --- round 5: hero balance, credit, quote rail, legal pages --- */
+    .page-hero .container{text-align:center}
+    .page-hero .sub{max-width:820px;margin:0 auto;text-align:center}
+    .n3-credit{margin:0;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+    .n3-credit a{color:#fff;border-bottom:1px solid rgba(240,136,18,.55);padding-bottom:2px;transition:color .3s var(--ease)}
+    .n3-credit a:hover{color:var(--amber)}
+    .legal h3{font-size:1.12rem;margin:28px 0 8px}
+    .legal p,.legal li{font-size:.95rem}
+    .legal p{margin:0 0 12px}
+    .legal ul{margin:0 0 14px;padding-left:20px}
+    .legal li{margin-bottom:6px}
+    .legal strong{color:var(--navy-800)}
+    @media(max-width:640px){
+      .quote-rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:4px 24px 18px;margin:0 -28px;scrollbar-width:none}
+      .quote-rail .quote-card{flex:0 0 84%;scroll-snap-align:center}
+      .quote-rail::-webkit-scrollbar{display:none}
+      .medallion .stars{display:none}
+      .medallion .org{font-size:.54rem;letter-spacing:.3em}
+      .medallion .role{font-size:.82rem}
+      .medallion .win{font-size:.5rem;letter-spacing:.28em}
+      .medallion .yr{font-size:.98rem}
+    }
+    

@@ -203,27 +203,9 @@ img,svg{display:block}
   position:absolute;top:-34px;right:-14px;z-index:4;width:200px;height:200px;--star-r:69px;--star:15px;
   opacity:0;animation:rise 1s var(--ease) .7s forwards;
 }
-.medallion .inner{
-  width:100%;height:100%;border-radius:50%;background:#fff;
-  border:6px solid rgba(255,255,255,.9);
-  box-shadow:0 18px 44px rgba(13,28,52,.22),inset 0 0 0 1px rgba(13,28,52,.08),inset 0 0 0 10px #fff,inset 0 0 0 11px rgba(13,28,52,.1);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-  animation:float 7s ease-in-out infinite;
-}
+.medallion img{display:block;width:100%;height:100%;filter:drop-shadow(0 16px 34px rgba(13,28,52,.22))}
+
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.medallion .stars{position:absolute;inset:0;pointer-events:none}
-.medallion .stars svg{position:absolute;top:50%;left:50%;width:var(--star);height:var(--star);fill:var(--amber)}
-.medallion .stars svg:nth-child(1){transform:translate(-50%,-50%) rotate(-52deg) translateY(calc(-1*var(--star-r)))}
-.medallion .stars svg:nth-child(2){transform:translate(-50%,-50%) rotate(-26deg) translateY(calc(-1*var(--star-r)))}
-.medallion .stars svg:nth-child(3){transform:translate(-50%,-50%) translateY(calc(-1*var(--star-r)))}
-.medallion .stars svg:nth-child(4){transform:translate(-50%,-50%) rotate(26deg) translateY(calc(-1*var(--star-r)))}
-.medallion .stars svg:nth-child(5){transform:translate(-50%,-50%) rotate(52deg) translateY(calc(-1*var(--star-r)))}
-.medallion .org{font-family:var(--sans);font-size:.6rem;font-weight:700;letter-spacing:.36em;color:var(--slate)}
-.medallion .role{display:block;font-family:var(--serif);font-size:.96rem;font-weight:600;color:var(--navy-900);line-height:1.42;margin-top:6px;letter-spacing:.01em}
-.medallion .win{display:block;font-family:var(--sans);font-size:.56rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--amber-deep);margin-top:9px}
-.medallion .win::before{content:'';display:block;width:30px;height:2px;background:var(--amber);margin:0 auto 8px}
-.medallion .yr{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--navy-900);line-height:1;margin-top:6px}
-.medallion .yr .amp{color:var(--amber);font-style:italic;font-size:1.1rem}
 
 /* ==========================================================
    STATS BAND — navy, animated counters
@@ -380,7 +362,6 @@ img,svg{display:block}
   .cred-panel{position:relative;inset:auto;padding:40px 28px 48px}
   .cred-mark{font-size:5.2rem;right:10px;bottom:2px}
   .cred-role{max-width:70%;line-height:1.8}
-  .medallion .yr{font-size:1.05rem}
   .medallion{width:150px;height:150px;top:-38px;right:2px;--star-r:51px;--star:12px}
   .contact-card{position:relative;left:auto;bottom:auto;margin:-46px 14px 0;width:auto;min-width:0;padding:18px 18px}
   .pill{font-size:.8rem;min-width:0}
@@ -573,10 +554,5 @@ body.nav-open{overflow:hidden}
       .quote-rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:4px 24px 18px;margin:0 -28px;scrollbar-width:none}
       .quote-rail .quote-card{flex:0 0 84%;scroll-snap-align:center}
       .quote-rail::-webkit-scrollbar{display:none}
-      .medallion .stars{display:none}
-      .medallion .org{font-size:.54rem;letter-spacing:.3em}
-      .medallion .role{font-size:.82rem}
-      .medallion .win{font-size:.5rem;letter-spacing:.28em}
-      .medallion .yr{font-size:.98rem}
     }
     

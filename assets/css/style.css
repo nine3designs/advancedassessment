@@ -598,3 +598,15 @@ body.nav-open{overflow:hidden}
   .award-photos{gap:26px;align-items:center}
   .award-photo{width:min(320px,88vw);max-width:none}
 }
+
+/* --- v12: mobile perf --- */
+@media(max-width:640px){
+  .card,.quote-card,.info-card,.form-card{box-shadow:0 6px 18px rgba(13,28,52,.07)}
+  .card:hover,.quote-card:hover{transform:none;box-shadow:0 6px 18px rgba(13,28,52,.07)}
+}
+.next-page{display:none;padding:0 24px 46px;text-align:center}
+.next-page a.btn{display:inline-block;min-width:min(420px,100%)}
+@media(max-width:640px){.next-page{display:block}}
+.fb-form{background:var(--navy-900);border-color:rgba(255,255,255,.08)}
+.fb-form h3{color:#fff}
+.fb-form .form-group label{color:var(--amber)}

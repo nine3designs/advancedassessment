@@ -212,5 +212,22 @@
 </footer>
 
 <script src="assets/js/main.js" defer></script>
+<script>
+(function(){
+  document.querySelectorAll(".quote-card").forEach(function(card){
+    var p=card.querySelector("p");if(!p)return;
+    p.classList.add("qclip");
+    if(p.scrollHeight<=p.clientHeight+2){p.classList.remove("qclip");return;}
+    var btn=document.createElement("button");
+    btn.type="button";btn.className="read-more";btn.textContent="Read more";
+    var who=card.querySelector(".who");
+    if(who)card.insertBefore(btn,who);else card.appendChild(btn);
+    btn.addEventListener("click",function(){
+      var open=p.classList.toggle("qclip-open");
+      btn.textContent=open?"Show less":"Read more";
+    });
+  });
+})();
+</script>
 </body>
 </html>

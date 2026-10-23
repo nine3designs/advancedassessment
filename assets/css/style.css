@@ -637,3 +637,15 @@ body.nav-open{overflow:hidden}
 .read-more{display:inline-block;align-self:flex-start;margin-top:2px;font:600 .78rem/1 var(--sans);color:var(--amber-deep);cursor:pointer;background:none;border:0;padding:0;letter-spacing:.04em;text-transform:uppercase}
 .read-more:hover{text-decoration:underline}
 .contact-pills{margin-top:8px}
+
+/* --- v17: small-phone medallion clearance + swipe hint --- */
+@media(max-width:420px){
+  .medallion{width:118px;height:118px;top:-30px;right:6px;--star-r:41px;--star:10px}
+  .cred-role{max-width:62%}
+}
+.swipe-hint{display:none}
+@media(max-width:640px){
+  .swipe-hint{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 0 14px;color:var(--slate);font:600 .72rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase}
+  .swipe-hint .chev{font-size:1.3rem;line-height:1;color:var(--amber-deep);animation:nudge 1.4s ease-in-out infinite}
+  @keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+}

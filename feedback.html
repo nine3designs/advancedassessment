@@ -227,6 +227,12 @@
       btn.textContent=open?"Show less":"Read more";
     });
   });
+  document.querySelectorAll(".quote-rail").forEach(function(rail){
+    var h=document.createElement("div");
+    h.className="swipe-hint";h.setAttribute("aria-hidden","true");
+    h.innerHTML='<span class="chev">&#8250;</span><span>Swipe for more</span>';
+    rail.after(h);
+  });
 })();
 </script>
 </body>

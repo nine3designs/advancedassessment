@@ -610,3 +610,14 @@ body.nav-open{overflow:hidden}
 .fb-form{background:var(--navy-900);border-color:rgba(255,255,255,.08)}
 .fb-form h3{color:#fff}
 .fb-form .form-group label{color:var(--amber)}
+
+/* --- v13: width tweaks --- */
+@media(min-width:901px){
+  .expertise-grid > article:first-child:last-child{grid-column:1/-1}
+}
+.award-photo{max-width:270px}
+@media(max-width:640px){
+  .award-photo{width:min(340px,90vw)}
+  .quote-rail .quote-card{flex:0 0 92%}
+  .quote-rail{padding:4px 16px 18px}
+}

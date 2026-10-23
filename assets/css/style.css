@@ -621,3 +621,12 @@ body.nav-open{overflow:hidden}
   .quote-rail .quote-card{flex:0 0 92%}
   .quote-rail{padding:4px 16px 18px}
 }
+
+/* --- v14: hero reg visibility + quote grid tidying --- */
+@media(min-width:641px){
+  .cred-panel{inset:6% 0 22% 12%}
+  .contact-card{bottom:-64px}
+  .quote-rail{align-items:stretch}
+  .quote-card{display:flex;flex-direction:column}
+  .quote-card .who{margin-top:auto}
+}

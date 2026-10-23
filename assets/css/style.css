@@ -634,5 +634,5 @@ body.nav-open{overflow:hidden}
 /* --- v15: feedback read-more toggles --- */
 .quote-card p.qclip{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
 .quote-card p.qclip.qclip-open{display:block;-webkit-line-clamp:unset}
-.read-more{display:inline-block;margin-top:2px;font:600 .78rem/1 var(--sans);color:var(--amber-deep);cursor:pointer;background:none;border:0;padding:0;letter-spacing:.04em;text-transform:uppercase}
+.read-more{display:inline-block;align-self:flex-start;margin-top:2px;font:600 .78rem/1 var(--sans);color:var(--amber-deep);cursor:pointer;background:none;border:0;padding:0;letter-spacing:.04em;text-transform:uppercase}
 .read-more:hover{text-decoration:underline}

@@ -78,7 +78,7 @@
       </figure>
     </div>
 
-    <div class="section-head" style="margin:64px 0 34px">
+    <div class="section-head" style="margin:64px auto 34px">
       <span class="kicker" style="justify-content:center">Supervision of Contact / Family Time</span>
       <h2 class="h2" style="font-size:clamp(1.4rem,2.4vw,1.9rem)">Supervision of Contact / Family Time Feedback</h2>
     </div>
@@ -93,7 +93,7 @@
     </figure>
     </div>
 
-    <div class="section-head" style="margin:64px 0 34px">
+    <div class="section-head" style="margin:64px auto 34px">
       <span class="kicker" style="justify-content:center">Advocacy</span>
       <h2 class="h2" style="font-size:clamp(1.4rem,2.4vw,1.9rem)">Advocacy Feedback</h2>
     </div>
@@ -102,7 +102,7 @@
       <figcaption class="who">(Parent)</figcaption>
     </figure>
 
-    <div class="section-head" style="margin:64px 0 44px">
+    <div class="section-head" style="margin:64px auto 44px">
       <span class="kicker" style="justify-content:center">Professional Comments</span>
       <h2 class="h2">What Professionals Say</h2>
     </div>
@@ -221,7 +221,7 @@
     var btn=document.createElement("button");
     btn.type="button";btn.className="read-more";btn.textContent="Read more";
     var who=card.querySelector(".who");
-    if(who)card.insertBefore(btn,who);else card.appendChild(btn);
+    if(who)who.after(btn);else card.appendChild(btn);
     btn.addEventListener("click",function(){
       var open=p.classList.toggle("qclip-open");
       btn.textContent=open?"Show less":"Read more";
